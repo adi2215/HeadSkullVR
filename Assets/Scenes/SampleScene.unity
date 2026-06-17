@@ -15556,7 +15556,7 @@ GameObject:
   - component: {fileID: 8580114667084733268}
   - component: {fileID: 6014643090974269681}
   m_Layer: 0
-  m_Name: skull_8_R
+  m_Name: Maxilla_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16678,7 +16678,7 @@ GameObject:
   - component: {fileID: 5455783059638990386}
   - component: {fileID: 6700825807052492846}
   m_Layer: 0
-  m_Name: teath_BOTTOM
+  m_Name: Teath_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16696,7 +16696,7 @@ GameObject:
   - component: {fileID: 5248384076368058093}
   - component: {fileID: 1075030324168015190}
   m_Layer: 0
-  m_Name: skull_2
+  m_Name: Frontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17044,7 +17044,7 @@ GameObject:
   - component: {fileID: 2954508192793405164}
   - component: {fileID: 7363175976537849252}
   m_Layer: 0
-  m_Name: skull_3_R
+  m_Name: Zygomatic_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17252,7 +17252,7 @@ GameObject:
   - component: {fileID: 2793926013293533885}
   - component: {fileID: 4000863409449042387}
   m_Layer: 0
-  m_Name: skull_13
+  m_Name: Sphenoid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17270,7 +17270,7 @@ GameObject:
   - component: {fileID: 6437789358866954337}
   - component: {fileID: 8145957808033570295}
   m_Layer: 0
-  m_Name: skull_9
+  m_Name: Mandible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17448,7 +17448,7 @@ GameObject:
   - component: {fileID: 6119769343841567804}
   - component: {fileID: 6722664868725774040}
   m_Layer: 0
-  m_Name: teath_TOP
+  m_Name: Teath_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18186,7 +18186,7 @@ GameObject:
   - component: {fileID: 304876928070014823}
   - component: {fileID: 9125739524955979304}
   m_Layer: 0
-  m_Name: skull_11_R
+  m_Name: Palatine_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18204,7 +18204,7 @@ GameObject:
   - component: {fileID: 6556319252393038929}
   - component: {fileID: 3788010364771423374}
   m_Layer: 0
-  m_Name: skull_7_R
+  m_Name: Lacrimal_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18275,7 +18275,7 @@ GameObject:
   - component: {fileID: 4373023912238496571}
   - component: {fileID: 6932920583081615355}
   m_Layer: 0
-  m_Name: skull_16
+  m_Name: Ethmoid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18444,7 +18444,7 @@ GameObject:
   - component: {fileID: 8048176029105989276}
   - component: {fileID: 8826015789023805596}
   m_Layer: 0
-  m_Name: skull_11_L
+  m_Name: Palatine_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18462,7 +18462,7 @@ GameObject:
   - component: {fileID: 3502216647024492517}
   - component: {fileID: 1967179950390238145}
   m_Layer: 0
-  m_Name: skull_4_R
+  m_Name: Temporal_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18503,7 +18503,7 @@ GameObject:
   - component: {fileID: 7212197141938673777}
   - component: {fileID: 1426530766946199404}
   m_Layer: 0
-  m_Name: skull_6_L
+  m_Name: Concha_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18881,7 +18881,7 @@ GameObject:
   - component: {fileID: 5245202229302554289}
   - component: {fileID: 101596712524337227}
   m_Layer: 0
-  m_Name: skull_4_L
+  m_Name: Temporal_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18923,7 +18923,7 @@ GameObject:
   - component: {fileID: 3797157715203866907}
   - component: {fileID: 4767062902531353697}
   m_Layer: 0
-  m_Name: skull_1_R
+  m_Name: Parietal_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18979,7 +18979,7 @@ GameObject:
   - component: {fileID: 838236540325784101}
   - component: {fileID: 4553095914468249418}
   m_Layer: 0
-  m_Name: skull_5_L
+  m_Name: Nasal_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18997,7 +18997,7 @@ GameObject:
   - component: {fileID: 2190897735895700083}
   - component: {fileID: 5215748802408843066}
   m_Layer: 0
-  m_Name: skull_1_L
+  m_Name: Parietal_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19187,7 +19187,7 @@ GameObject:
   - component: {fileID: 3249675293085657927}
   - component: {fileID: 2987157642672567043}
   m_Layer: 0
-  m_Name: skull_3_L
+  m_Name: Zygomatic_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19303,7 +19303,7 @@ GameObject:
   - component: {fileID: 5200270747404410110}
   - component: {fileID: 1541709989004415984}
   m_Layer: 0
-  m_Name: skull_12
+  m_Name: Vomer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19417,7 +19417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7607737517499261986}
   m_Layer: 0
-  m_Name: skull_main
+  m_Name: Skull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19443,7 +19443,7 @@ GameObject:
   - component: {fileID: 5272201446932566834}
   - component: {fileID: 3936393731620750765}
   m_Layer: 0
-  m_Name: skull_8_L
+  m_Name: Maxilla_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19536,7 +19536,7 @@ GameObject:
   - component: {fileID: 7749320968826698904}
   - component: {fileID: 3311297201151173147}
   m_Layer: 0
-  m_Name: skull_10
+  m_Name: Occipital
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19593,7 +19593,7 @@ GameObject:
   - component: {fileID: 1100911467727559685}
   - component: {fileID: 8881613659379577550}
   m_Layer: 0
-  m_Name: skull_7_L
+  m_Name: Lacrimal_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19619,7 +19619,7 @@ GameObject:
   - component: {fileID: 789446855321945301}
   - component: {fileID: 9016829662528299828}
   m_Layer: 0
-  m_Name: skull_5_R
+  m_Name: Nasal_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19940,7 +19940,7 @@ GameObject:
   - component: {fileID: 7001511808926421510}
   - component: {fileID: 6890505622064844400}
   m_Layer: 0
-  m_Name: skull_6_R
+  m_Name: Concha_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
