@@ -39,7 +39,6 @@ public class ControlModeManager : MonoBehaviour
 
     private void Update()
     {
-        // Для быстрого теста: M переключает режим
         if (Input.GetKeyDown(KeyCode.M))
         {
             ToggleMode();
@@ -89,20 +88,11 @@ public class ControlModeManager : MonoBehaviour
                 obj.SetActive(vrActive);
         }
 
-        // XR Device Simulator нужен только для теста в Editor, в обычном PC режиме лучше выключать
         if (xrDeviceSimulator != null)
             xrDeviceSimulator.SetActive(false);
 
-        if (pcActive)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         Debug.Log("[ControlModeManager] Mode: " + mode);
     }

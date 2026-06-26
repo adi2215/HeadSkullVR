@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -15,10 +16,12 @@ public class BonePiece : MonoBehaviour
 
     private Rigidbody rb;
     private XRGrabInteractable grabInteractable;
-    private BoneSlot currentSlot;
     private bool isPlaced;
 
+    private readonly List<BoneSlot> slotsInside = new List<BoneSlot>();
+
     public string BoneID => boneID;
+    public string NormalizedBoneID => NormalizeID(boneID);
     public bool IsPlaced => isPlaced;
 
     private void Awake()
@@ -38,57 +41,78 @@ public class BonePiece : MonoBehaviour
         TryPlaceBone();
     }
 
-    public void SetCurrentSlot(BoneSlot slot)
+    public void EnterSlot(BoneSlot slot)
     {
-        if (isPlaced) return;
-        currentSlot = slot;
+        if (isPlaced || slot == null)
+            return;
+
+        if (!slotsInside.Contains(slot))
+            slotsInside.Add(slot);
+
+        Debug.Log($"[BonePiece] {boneID} entered slot: {slot.SlotID}");
     }
 
-    public void ClearCurrentSlot(BoneSlot slot)
+    public void ExitSlot(BoneSlot slot)
     {
-        if (isPlaced) return;
+        if (isPlaced || slot == null)
+            return;
 
-        if (currentSlot == slot)
-            currentSlot = null;
+        if (slotsInside.Contains(slot))
+            slotsInside.Remove(slot);
+
+        Debug.Log($"[BonePiece] {boneID} exited slot: {slot.SlotID}");
     }
 
     public void TryPlaceBone()
     {
-        if (isPlaced) return;
-
-        if (currentSlot == null)
-        {
-            Debug.Log("[BonePiece] No target bone detected: " + boneID);
+        if (isPlaced)
             return;
+
+        Debug.Log($"[BonePiece] Trying to place: {boneID}. Slots inside count: {slotsInside.Count}");
+
+        for (int i = slotsInside.Count - 1; i >= 0; i--)
+        {
+            if (slotsInside[i] == null || slotsInside[i].IsOccupied)
+                slotsInside.RemoveAt(i);
         }
 
-        if (currentSlot.IsOccupied)
+        BoneSlot correctSlot = null;
+
+        foreach (BoneSlot slot in slotsInside)
         {
-            Debug.Log("[BonePiece] Target already occupied: " + currentSlot.SlotID);
-            return;
+            Debug.Log($"[BonePiece] Checking slot: BoneID={NormalizedBoneID}, SlotID={slot.NormalizedSlotID}, RawSlot={slot.SlotID}");
+
+            if (slot.CanAcceptBone(this))
+            {
+                correctSlot = slot;
+                break;
+            }
         }
 
-        if (boneID == currentSlot.SlotID)
+        if (correctSlot == null)
         {
-            PlaceBone();
-        }
-        else
-        {
-            Debug.Log("[BonePiece] Wrong target. Bone: " + boneID + " Target: " + currentSlot.SlotID);
+            Debug.LogWarning($"[BonePiece] No correct slot found for: {boneID}");
+
+            foreach (BoneSlot slot in slotsInside)
+            {
+                Debug.LogWarning($"[BonePiece] Nearby slot: {slot.SlotID} | Bone: {boneID} | SameID: {NormalizedBoneID == slot.NormalizedSlotID}");
+            }
 
             if (boneRenderer != null && wrongMaterial != null)
                 boneRenderer.material = wrongMaterial;
+
+            return;
         }
+
+        PlaceBone(correctSlot);
     }
 
-    private void PlaceBone()
+    private void PlaceBone(BoneSlot slot)
     {
         isPlaced = true;
 
         if (rb != null)
         {
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
             rb.useGravity = false;
             rb.isKinematic = true;
         }
@@ -96,11 +120,7 @@ public class BonePiece : MonoBehaviour
         if (grabInteractable != null)
             grabInteractable.enabled = false;
 
-        // Главное: передаем материал этой кости в прозрачную кость
-        currentSlot.FillWithBone(this);
-
-        if (AssemblyManager.Instance != null)
-            AssemblyManager.Instance.AddPlacedBone();
+        slot.FillWithBone(this);
 
         Debug.Log("[BonePiece] Bone placed and removed: " + boneID);
 
@@ -113,6 +133,14 @@ public class BonePiece : MonoBehaviour
             return null;
 
         return boneRenderer.sharedMaterials;
+    }
+
+    public static string NormalizeID(string id)
+    {
+        if (string.IsNullOrWhiteSpace(id))
+            return "";
+
+        return id.Trim().ToLowerInvariant().Replace(" ", "").Replace("_", "").Replace("-", "");
     }
 
     private void OnDestroy()
